@@ -1,0 +1,146 @@
+import React, { useState } from 'react';
+import googleLogo from '../../../media/google-logo.png';
+import { createUseStyles } from 'react-jss';
+import { GlobalContext } from '../../../App';
+
+export default function Search(props) {
+  const useStyles = createUseStyles({
+    searchWrapper: {
+      display: 'flex',
+      flexDirection: props.mini ? `row` : 'column',
+      justifyContent: props.mini ? `flex-start` : 'center',
+      alignItems: 'center',
+      '& img': {
+        cursor: 'pointer',
+      },
+    },
+    searchMain: {
+      width: props.mini ? `50%` : '100%',
+      maxWidth: '500px',
+    },
+    optionsGroup: {
+      width: `100%`,
+      display: 'flex',
+      justifyContent: props.mini ? `space-between` : 'space-evenly',
+      fontSize: '16px',
+      fontFamily: 'Times New Roman',
+      margin: props.mini ? 0 : '1rem 0',
+      padding: props.mini && '0 9rem 0 1.5rem',
+      '& a': {
+        cursor: 'pointer',
+        textDecoration: 'underline',
+        margin: '0 7px',
+      },
+    },
+    form: {
+      display: 'flex',
+      minWidth: '400px',
+      flexDirection: props.mini ? 'row' : 'column',
+      alignItems: 'center',
+      padding: props.mini && '0 1rem',
+    },
+    input: {
+      width: `100%`,
+      padding: `5px`,
+    },
+    searchButton: {
+      margin: '1rem',
+    },
+  });
+  const classes = useStyles(props);
+  const [state, dispatch] = React.useContext(GlobalContext);
+  const [searchText, setSearchText] = useState(state.InternetExplorer.query);
+
+  // Handle the Google search submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const key = process.env.REACT_APP_GOOGLE_API_KEY;
+    const cx = process.env.REACT_APP_GOOGLE_CX_ID; // Your Custom Search Engine ID
+    const url = `https://www.googleapis.com/customsearch/v1?q=${searchText}&key=${key}&cx=${cx}`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((response) => {
+        dispatch({
+          type: 'InternetExplorerResults',
+          payload: {
+            results: response.items || [], // Update to match Google API response format
+            query: searchText,
+            pagination: response.searchInformation || {},
+            submitted: true,
+          },
+        });
+      });
+  };
+
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+  };
+
+  const handleReset = () => {
+    dispatch({
+      type: 'InternetExplorerReset',
+    });
+  };
+
+  return (
+    <div className={classes.searchWrapper}>
+      <img
+        onClick={handleReset}
+        src={googleLogo}
+        alt="logo"
+        width={props.mini ? '200px' : '300px'}
+      />
+      <div className={classes.searchMain}>
+        <div className={classes.optionsGroup}>
+          <a
+            href="https://portfolio-r5rq.onrender.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Web
+          </a>
+          <a
+            href="https://i.pinimg.com/originals/ca/d5/17/cad517b0dd2dd5741cde7b078dce3361.jpg"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Image
+          </a>
+          <a
+            href="https://stareread.blogspot.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            News
+          </a>
+        </div>
+        <form className={classes.form} onSubmit={handleSubmit}>
+          <input
+            className={classes.input}
+            value={searchText}
+            onChange={handleChange}
+          />
+          <div>
+            <button
+              className={classes.searchButton}
+              type="submit"
+              value="search"
+            >
+              {props.mini ? `Search` : `Google Search`}
+            </button>
+            {!props.mini && (
+              <button
+                className={classes.searchButton}
+                type="submit"
+                value="search"
+              >
+                I'm Feeling Lucky
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
