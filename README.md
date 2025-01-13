@@ -8,7 +8,7 @@
 
 ### Features
 
-- **Internet Explorer** with Google Search (searches for gifs via ***Google API***  by request query);
+- **Internet Explorer** with Google Search (searches anything via ***Google API***  by request query);
 - **Weather App** desktop widget to see weather in select city via ***OpenWeather API***
 - **To Do App** with dynamic tabs (a must-have!)
 -  [**JS Paint**](https://github.com/1j01/jspaint), Paint reimplementation by: [1j01](https://github.com/1j01)
@@ -30,9 +30,6 @@ REACT_APP_GIPHY_API_KEY="Giphy API key"
 3. Then
 `npm start`
 
-*This project is serverless so I am using a self hosted CORS reverse proxy for cross-origin API requests* 
-[see more](https://github.com/Rob--W/cors-anywhere)
-
 ### Tools
 - React
 - Context API & useReducer
@@ -49,4 +46,4 @@ If you like this project and would like to contribute feel free to send a PR or 
 ### License
 The Windows 7 name, artwork, trademark are surely property of Microsoft. This project is provided for educational purposes only. It is not affiliated with and has not been approved by Microsoft.
 ### Credits
-*Thanks to [ShizukuIchi](https://github.com/ShizukuIchi/winXP) for styling refferences and inspiration!*
+*Thanks to [shalkauskas](https://github.com/shalkauskas/windows) for styling refferences and inspiration!*
