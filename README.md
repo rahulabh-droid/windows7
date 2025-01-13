@@ -25,7 +25,8 @@
 ```
 REACT_APP_WEATHER_API_KEY="OpenWeather API key"
 
-REACT_APP_GIPHY_API_KEY="Giphy API key"
+REACT_APP_GOOGLE_API_KEY="Google API key"
+REACT_APP_GOOGLE_CX_KEY="Google Cse key"
 ```
 3. Then
 `npm start`
