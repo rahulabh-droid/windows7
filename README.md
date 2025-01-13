@@ -1,9 +1,6 @@
-# Windows XP
+# Windows 7
 
 **A React recreation of iconic operating system.**
-
-### [Demo](https://windows.shalkauskas.com)
-
 
 [![](https://res.cloudinary.com/dyj6lkekg/image/upload/c_thumb,q_46,w_557/v1618250736/github/windows.png)](https://windows.shalkauskas.com/ "Visit website")
 
@@ -11,7 +8,7 @@
 
 ### Features
 
-- **Internet Explorer** with Google Search (searches for gifs via ***Giphy API***  by request query);
+- **Internet Explorer** with Google Search (searches for gifs via ***Google API***  by request query);
 - **Weather App** desktop widget to see weather in select city via ***OpenWeather API***
 - **To Do App** with dynamic tabs (a must-have!)
 -  [**JS Paint**](https://github.com/1j01/jspaint), Paint reimplementation by: [1j01](https://github.com/1j01)
@@ -47,11 +44,9 @@ If you like this project and would like to contribute feel free to send a PR or 
 
 #### Task list
 - [ ] Minimize and maximize apps
-- [ ] User login and save user data to database
-- [ ] Calculator
-- [ ] Games
+- [ ] User login and save user data to database.
 
 ### License
-The Windows XP name, artwork, trademark are surely property of Microsoft. This project is provided for educational purposes only. It is not affiliated with and has not been approved by Microsoft.
+The Windows 7 name, artwork, trademark are surely property of Microsoft. This project is provided for educational purposes only. It is not affiliated with and has not been approved by Microsoft.
 ### Credits
 *Thanks to [ShizukuIchi](https://github.com/ShizukuIchi/winXP) for styling refferences and inspiration!*
