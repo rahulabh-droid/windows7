@@ -48,4 +48,4 @@ If you like this project and would like to contribute feel free to send a PR or 
 ### License
 The Windows 7 name, artwork, trademark are surely property of Microsoft. This project is provided for educational purposes only. It is not affiliated with and has not been approved by Microsoft.
 ### Credits
-*Thanks to [shalkauskas](https://github.com/shalkauskas/windows) for styling refferences and inspiration!*
+*Thanks to [shalkauskas](https://github.com/shalkauskas/windows) for inspiration!*
