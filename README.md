@@ -1,6 +1,6 @@
 # Windows 7
 
-**A React recreation of iconic operating system.**
+**A react based Operating system**
 
 [![](https://res.cloudinary.com/dyj6lkekg/image/upload/c_thumb,q_46,w_557/v1618250736/github/windows.png)](https://windows.shalkauskas.com/ "Visit website")
 
